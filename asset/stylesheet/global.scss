@@ -1,0 +1,32 @@
+$darkOlive:#a7a38f;
+$lightOlive:#e8e6db;
+
+@font-face {
+    font-family: avenir;
+    src: url(../font/avenir.woff2);
+}
+
+@font-face {
+    font-family: butler;
+    src: url(../font/butler.woff2);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
