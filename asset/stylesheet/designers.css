@@ -1,0 +1,442 @@
+@font-face {
+  font-family: avenir;
+  src: url(../font/avenir.woff2);
+}
+@font-face {
+  font-family: butler;
+  src: url(../font/butler.woff2);
+}
+@font-face {
+  font-family: avenirBold;
+  src: url(../font/avenir_ff/AvenirLTStd-Book.otf);
+}
+@keyframes load {
+  0% {
+    top: -100%;
+    visibility: visible;
+  }
+  20% {
+    top: 0;
+    visibility: visible;
+  }
+  80% {
+    top: 0;
+    visibility: visible;
+  }
+  100% {
+    top: -100%;
+    visibility: hidden;
+  }
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-color: rgb(249, 247, 242);
+}
+body > div {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 10000;
+  background-color: white;
+  top: -100%;
+  left: 0;
+  visibility: hidden;
+  animation: 2s linear forwards;
+  animation-name: load;
+}
+body > div > div {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 10001;
+  background-color: #e8e6db;
+  top: -100%;
+  left: 0;
+  visibility: hidden;
+  animation: 4s linear forwards;
+  animation-name: load;
+}
+body > div > div > figure {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body > div > div > figure > img {
+  width: 15%;
+  display: flex;
+  z-index: 100000;
+}
+body > header {
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  padding-top: 24px;
+  padding: 26px;
+}
+body > header > nav {
+  width: 100%;
+  justify-content: center;
+}
+body > header > nav > figure {
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  z-index: 10;
+}
+body > header > nav > figure > a {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+body > header > nav > figure > a > img {
+  width: 86.5%;
+}
+body > header > nav > label {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  top: 44px;
+  right: 40px;
+  cursor: pointer;
+  z-index: 100;
+  background-color: transparent;
+}
+body > header > nav > label:hover ~ div.btn > span:nth-of-type(2) {
+  transition: cubic-bezier(0, 1, 1, 0.75) 0.2s;
+  transform: translateY(5px);
+}
+body > header > nav > input {
+  position: relative;
+  z-index: 100;
+  opacity: 0;
+}
+body > header > nav > input:checked ~ div.menu {
+  transition: 0.4s ease;
+  opacity: 1;
+}
+body > header > nav > input:checked ~ div.nav {
+  right: 0;
+  transition: 0.4s ease;
+}
+body > header > nav > input:checked ~ div.btn > span {
+  top: 12px;
+  transition: 0.4s ease-out;
+}
+body > header > nav > input:checked ~ div.btn > span:nth-of-type(1) {
+  transform: rotateZ(45deg);
+}
+body > header > nav > input:checked ~ div.btn > span:nth-of-type(2) {
+  transform: rotateZ(-45deg);
+}
+body > header > nav > div.menu {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.7333333333);
+  transition: 0.4s ease;
+  opacity: 0;
+  z-index: 5;
+}
+body > header > nav > div.nav {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background-color: #e8e6db;
+  transition: 0.4s ease;
+  z-index: 10;
+  padding-left: 4%;
+  padding-top: 4.5%;
+}
+body > header > nav > div.nav > ul {
+  width: 100%;
+}
+body > header > nav > div.nav > ul:hover a {
+  color: rgba(167, 163, 143, 0.5019607843);
+  transition: 0.4s ease;
+}
+body > header > nav > div.nav > ul > li {
+  margin: 20px;
+  transition: 0.4s ease;
+}
+body > header > nav > div.nav > ul > li:hover > a {
+  color: #a7a38f;
+  transition: 0.4s ease;
+}
+body > header > nav > div.nav > ul > li:hover {
+  transition: 0.4s ease;
+  transform: translateX(50px);
+}
+body > header > nav > div.nav > ul > li > a {
+  font-size: 60px;
+  font-family: butler;
+  text-transform: capitalize;
+  color: #a7a38f;
+}
+body > header > nav > div.nav > p {
+  padding-left: 5%;
+  padding-top: 10px;
+  color: #a7a38f;
+  font-family: avenir;
+}
+body > header > nav > div.nav > p > a {
+  color: #a7a38f;
+}
+body > header > nav > div.nav > div {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 60px;
+}
+body > header > nav > div.nav > div > span {
+  margin: 0 20px;
+}
+body > header > nav > div.nav > div > span > a > i {
+  font-size: 32px;
+  color: #a7a38f;
+}
+body > header > nav > div.btn {
+  position: fixed;
+  padding-top: 48px;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  top: 44px;
+  right: 40px;
+  z-index: 10;
+}
+body > header > nav > div.btn > span {
+  position: absolute;
+  display: flex;
+  width: 30px;
+  height: 2px;
+  background-color: black;
+  justify-content: end;
+  cursor: pointer;
+}
+body > header > nav > div.btn > span:nth-of-type(1) {
+  top: 6px;
+  transition: 0.4s ease-out;
+}
+body > header > nav > div.btn > span:nth-of-type(2) {
+  top: 18px;
+  transition: 0.4s ease-out;
+}
+body > main {
+  width: 100%;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 96px;
+}
+body > main > div.head > p {
+  width: 100%;
+  font-family: avenir;
+  text-transform: uppercase;
+  color: #a7a38f;
+}
+body > main > div.head > h1 {
+  width: 100%;
+  font-family: butler;
+  font-size: 96px;
+  font-weight: 400;
+  color: #a7a38f;
+}
+body > main > p {
+  -moz-column-count: 2;
+       column-count: 2;
+  color: #a7a38f;
+  font-family: avenir;
+  padding: 96px 17.25%;
+  line-height: 28.8px;
+  -moz-column-gap: 48px;
+       column-gap: 48px;
+}
+body > main > figure {
+  width: 100%;
+  transform: translateY(48px);
+  margin-top: -48px;
+}
+body > main > figure > img {
+  width: 100%;
+}
+body > article {
+  width: 100%;
+  padding: 0 48px;
+  background-color: #e8e6db;
+  padding-top: 144px;
+}
+body > article > div {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  align-items: start;
+}
+body > article > div > div {
+  padding-right: 24px;
+  width: 50%;
+}
+body > article > div > div > figure {
+  width: 100%;
+}
+body > article > div > div > figure > img {
+  width: 100%;
+}
+body > article > div > div > h3 {
+  font-size: 60px;
+  font-family: butler;
+  font-weight: 400;
+  color: #a7a38f;
+  margin-left: 12px;
+  margin-right: 24px;
+  margin-bottom: 24px;
+}
+body > article > div > div > h6 {
+  font-weight: bolder;
+  margin-left: 12px;
+  margin-bottom: 24px;
+  font-family: avenir;
+  color: #a7a38f;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+body > article > div > div > p {
+  margin-left: 12px;
+  margin-bottom: 24px;
+  font-family: avenir;
+  color: #a7a38f;
+  font-weight: 700;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 24px;
+}
+body > .banner {
+  width: 100%;
+  height: 72vh;
+  position: relative;
+  margin: 0 auto;
+  justify-content: center;
+  padding-top: 180px;
+  z-index: 10;
+}
+body > .banner > figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+}
+body > .banner > figure::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.2);
+}
+body > .banner > figure > img {
+  filter: blur(3px);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body > .banner > h2, body > .banner h4 {
+  width: 100%;
+  font-family: butler;
+  color: white;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+}
+body > .banner > h2 {
+  font-size: 124px;
+  line-height: 124px;
+}
+body > .banner > h4 {
+  font-size: 30px;
+}
+body > .banner > a {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjg1IiBoZWlnaHQ9Ijg5IiB2aWV3Qm94PSIwIDAgMjg1IDg5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0xOTAuNDAyIDEuODgzODZDMTU4LjgxOSAwLjU1NzY5IDEzMS4wNzggMC4wMzI4MTIyIDEwMS4xMzcgNS40MzAwNkM2MC43NDY4IDEyLjcxMSAzMS45MDEgMjYuMzc4NyAxNS4xOTY0IDQzLjYxQzUuNzM2MDkgNTMuMzY4NiAtOC42NzIyOSA3MC42MzIyIDEwLjMwMSA4MC4xMDc0QzMyLjM5MzIgOTEuMTQwMSA3OC43ODE0IDg4LjA0NDMgMTA3LjI0MSA4NS45MDU2QzE0Ny4zMjEgODIuODkzNyAxODguMDEyIDc4LjIyNzYgMjI0LjkxMSA3MC43NjNDMjUwLjEzMSA2NS42NjEzIDI3OS40NjggNTcuODk3MyAyODMuNDE0IDQ0Ljg1MjVDMjg3LjcxMSAzMC42NDg5IDI2Ny45MTggMTYuOTY1NCAyMzkuMTE0IDEwLjM3NEMyMDQuMDc0IDIuMzU1NTggMTYyLjYxNiAyLjAyMjM2IDEyNC4wNDMgMS40MTc5MyIgc3Ryb2tlPSIjRjlGN0YyIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K);
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: avenir;
+  text-transform: uppercase;
+  width: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  color: #e8e6db;
+  transition: 0.3s ease;
+}
+body > .banner > a:hover {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjg1IiBoZWlnaHQ9Ijg5IiB2aWV3Qm94PSIwIDAgMjg1IDg5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0xOTAuNDAyIDEuODgzODZDMTU4LjgxOSAwLjU1NzY5IDEzMS4wNzggMC4wMzI4MTIyIDEwMS4xMzcgNS40MzAwNkM2MC43NDY4IDEyLjcxMSAzMS45MDEgMjYuMzc4NyAxNS4xOTY0IDQzLjYxQzUuNzM2MDkgNTMuMzY4NiAtOC42NzIyOSA3MC42MzIyIDEwLjMwMSA4MC4xMDc0QzMyLjM5MzIgOTEuMTQwMSA3OC43ODE0IDg4LjA0NDMgMTA3LjI0MSA4NS45MDU2QzE0Ny4zMjEgODIuODkzNyAxODguMDEyIDc4LjIyNzYgMjI0LjkxMSA3MC43NjNDMjUwLjEzMSA2NS42NjEzIDI3OS40NjggNTcuODk3MyAyODMuNDE0IDQ0Ljg1MjVDMjg3LjcxMSAzMC42NDg5IDI2Ny45MTggMTYuOTY1NCAyMzkuMTE0IDEwLjM3NEMyMDQuMDc0IDIuMzU1NTggMTYyLjYxNiAyLjAyMjM2IDEyNC4wNDMgMS40MTc5MyIgc3Ryb2tlPSIjRjlGN0YyIiBmaWxsPSIjRjlGN0YyIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K);
+  color: #a7a38f;
+  transition: 0.3s ease;
+}
+body > footer {
+  width: 100%;
+  background-color: rgb(249, 247, 242);
+  padding: 120px 0;
+}
+body > footer > h2 {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 60px;
+  font-weight: 400;
+  color: #a7a38f;
+  font-family: butler;
+  text-align: center;
+}
+body > footer > h4 {
+  width: 100%;
+  font-size: 30px;
+  font-weight: 400;
+  color: #a7a38f;
+  text-align: center;
+  font-family: butler;
+}
+body > footer > p {
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  margin-top: 48px;
+  color: #a7a38f;
+  font-family: avenir;
+  font-size: 16px;
+  font-weight: 300;
+}
+body > footer > p > a {
+  color: #a7a38f;
+}
+body > footer > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+body > footer > div > span {
+  margin: 0 20px;
+}
+body > footer > div > span > a > i {
+  font-size: 32px;
+  color: #a7a38f;
+}/*# sourceMappingURL=designers.css.map */
