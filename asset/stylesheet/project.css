@@ -1,0 +1,312 @@
+@font-face {
+  font-family: avenir;
+  src: url(../font/avenir.woff2);
+}
+@font-face {
+  font-family: butler;
+  src: url(../font/butler.woff2);
+}
+@keyframes load {
+  0% {
+    top: -100%;
+    visibility: visible;
+  }
+  20% {
+    top: 0;
+    visibility: visible;
+  }
+  80% {
+    top: 0;
+    visibility: visible;
+  }
+  100% {
+    top: -100%;
+    visibility: hidden;
+  }
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-color: rgb(249, 247, 242);
+}
+body > div {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 10000;
+  background-color: white;
+  top: -100%;
+  left: 0;
+  visibility: hidden;
+  animation: 2s linear forwards;
+  animation-name: load;
+}
+body > div > div {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 10001;
+  background-color: #e8e6db;
+  top: -100%;
+  left: 0;
+  visibility: hidden;
+  animation: 4s linear forwards;
+  animation-name: load;
+}
+body > div > div > figure {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body > div > div > figure > img {
+  width: 15%;
+  display: flex;
+  z-index: 100000;
+}
+body > header {
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  padding-top: 24px;
+  padding: 26px;
+}
+body > header > nav {
+  width: 100%;
+  justify-content: center;
+}
+body > header > nav > figure {
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  z-index: 10;
+}
+body > header > nav > figure > a {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+body > header > nav > figure > a > img {
+  width: 86.5%;
+}
+body > header > nav > label {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  top: 44px;
+  right: 40px;
+  cursor: pointer;
+  z-index: 100;
+  background-color: transparent;
+}
+body > header > nav > label:hover ~ div.btn > span:nth-of-type(2) {
+  transition: cubic-bezier(0, 1, 1, 0.75) 0.2s;
+  transform: translateY(5px);
+}
+body > header > nav > input {
+  position: relative;
+  z-index: 100;
+  opacity: 0;
+}
+body > header > nav > input:checked ~ div.menu {
+  transition: 0.4s ease;
+  opacity: 1;
+}
+body > header > nav > input:checked ~ div.nav {
+  right: 0;
+  transition: 0.4s ease;
+}
+body > header > nav > input:checked ~ div.btn > span {
+  top: 12px;
+  transition: 0.4s ease-out;
+}
+body > header > nav > input:checked ~ div.btn > span:nth-of-type(1) {
+  transform: rotateZ(45deg);
+}
+body > header > nav > input:checked ~ div.btn > span:nth-of-type(2) {
+  transform: rotateZ(-45deg);
+}
+body > header > nav > div.menu {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.7333333333);
+  transition: 0.4s ease;
+  opacity: 0;
+  z-index: 5;
+}
+body > header > nav > div.nav {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background-color: #e8e6db;
+  transition: 0.4s ease;
+  z-index: 10;
+  padding-left: 4%;
+  padding-top: 4.5%;
+}
+body > header > nav > div.nav > ul {
+  width: 100%;
+}
+body > header > nav > div.nav > ul:hover a {
+  color: rgba(167, 163, 143, 0.5019607843);
+  transition: 0.4s ease;
+}
+body > header > nav > div.nav > ul > li {
+  margin: 20px;
+  transition: 0.4s ease;
+}
+body > header > nav > div.nav > ul > li:hover > a {
+  color: #a7a38f;
+  transition: 0.4s ease;
+}
+body > header > nav > div.nav > ul > li:hover {
+  transition: 0.4s ease;
+  transform: translateX(50px);
+}
+body > header > nav > div.nav > ul > li > a {
+  font-size: 60px;
+  font-family: butler;
+  text-transform: capitalize;
+  color: #a7a38f;
+}
+body > header > nav > div.nav > p {
+  padding-left: 5%;
+  padding-top: 10px;
+  color: #a7a38f;
+  font-family: avenir;
+}
+body > header > nav > div.nav > p > a {
+  color: #a7a38f;
+}
+body > header > nav > div.nav > div {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 60px;
+}
+body > header > nav > div.nav > div > span {
+  margin: 0 20px;
+}
+body > header > nav > div.nav > div > span > a > i {
+  font-size: 32px;
+  color: #a7a38f;
+}
+body > header > nav > div.btn {
+  position: fixed;
+  padding-top: 48px;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  top: 44px;
+  right: 40px;
+  z-index: 10;
+}
+body > header > nav > div.btn > span {
+  position: absolute;
+  display: flex;
+  width: 30px;
+  height: 2px;
+  background-color: black;
+  justify-content: end;
+  cursor: pointer;
+}
+body > header > nav > div.btn > span:nth-of-type(1) {
+  top: 6px;
+  transition: 0.4s ease-out;
+}
+body > header > nav > div.btn > span:nth-of-type(2) {
+  top: 18px;
+  transition: 0.4s ease-out;
+}
+body main {
+  width: 100%;
+  padding-left: 48px;
+  padding-right: 48px;
+  justify-content: space-between;
+}
+body main > div {
+  display: flex;
+  flex-wrap: wrap;
+  width: 48.25%;
+  margin-bottom: 48px;
+}
+body main > div > figure {
+  display: flex;
+  width: 100%;
+  height: 500px;
+}
+body main > div > figure > img {
+  display: flex;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body main > div > a {
+  display: flex;
+  font-family: butler, serif;
+  font-size: 40px;
+  color: #a7a38f;
+}
+body > footer {
+  width: 100%;
+  background-color: rgb(249, 247, 242);
+  padding: 120px 0;
+}
+body > footer > h2 {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 60px;
+  font-weight: 400;
+  color: #a7a38f;
+  font-family: butler;
+  text-align: center;
+}
+body > footer > h4 {
+  width: 100%;
+  font-size: 30px;
+  font-weight: 400;
+  color: #a7a38f;
+  text-align: center;
+  font-family: butler;
+}
+body > footer > p {
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  margin-top: 48px;
+  color: #a7a38f;
+  font-family: avenir;
+  font-size: 16px;
+  font-weight: 300;
+}
+body > footer > p > a {
+  color: #a7a38f;
+}
+body > footer > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+body > footer > div > span {
+  margin: 0 20px;
+}
+body > footer > div > span > a > i {
+  font-size: 32px;
+  color: #a7a38f;
+}/*# sourceMappingURL=project.css.map */
