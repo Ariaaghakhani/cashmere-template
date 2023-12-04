@@ -16,7 +16,7 @@
   
 - 🖥️ Created - 2023 Aug 
   
-- 🤖 Technologies Used - HTML5 , CSS3 , JavaScript , TailwindCSS
+- 🤖 Technologies Used - HTML5 , CSS3 
 
 - 📬 How to reach me : with my
 [Instagram](https://www.instagram.com/dev.aria.agk) ,
